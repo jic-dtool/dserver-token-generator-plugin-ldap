@@ -9,7 +9,16 @@ dservercore extensions at the same time (this one owns the ``/auth/ldap``
 prefix; the OAuth2 plugin owns ``/auth/oauth2``).
 """
 
-__version__ = "0.1.0"
+try:
+    from importlib.metadata import version, PackageNotFoundError
+except ModuleNotFoundError:
+    from importlib_metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version(__name__)
+except PackageNotFoundError:
+    # package is not installed
+    pass
 
 from .plugin import LdapTokenGeneratorPlugin
 from .blueprint import ldap_bp
