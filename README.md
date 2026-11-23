@@ -32,6 +32,7 @@ credentials). This matches the dtool-lookup-webapp username/password form.
 | `LDAP_DEFAULT_BASE_URIS` | Base URIs to grant on provision (comma-sep) | `s3://dtool-bucket` |
 | `LDAP_GRANT_REGISTER` | Also grant register (not just search) | `true` |
 | `JWT_PRIVATE_KEY_FILE` / `JWT_PUBLIC_KEY_FILE` / `JWT_ALGORITHM` | Shared JWT signing config | (same as dserver) |
+| `JWT_ISSUER` / `JWT_AUDIENCE` | Token `iss` / `aud` claims; must match dserver's `JWT_DECODE_ISSUER` / `JWT_DECODE_AUDIENCE` | dserver's `JWT_DECODE_*`, else `dserver` |
 
 ## Auth vs. authorization
 
